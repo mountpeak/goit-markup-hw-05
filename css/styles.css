@@ -76,6 +76,20 @@ body {
   font-style: normal;
 }
 
+.active-menu {
+  position: relative;
+  color: var(--accent-color);
+}
+.active-menu::after {
+  position:absolute;
+  content: "";
+  display: block;
+  background-color: var(--accent-color);
+  width: 100%;
+  height: 4px;
+  bottom: -27px;
+  border-radius: 2px;
+}
 /* ======================================Header========================================== */
 
 .page-header {
@@ -613,7 +627,7 @@ body {
 }
 
 .modal-close-btn-icon {
-  fill:  var(--accent-color);
+  fill: var(--accent-color);
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
