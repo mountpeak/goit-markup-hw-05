@@ -16,6 +16,7 @@
   --customer-border: #8e8f99;
   --hover-green: #31d0aa;
   --border: #e7e9fc;
+  --duration-timing-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -76,14 +77,15 @@ body {
   font-style: normal;
 }
 
-.active-menu {
+.menu-link.active-menu {
   position: relative;
   color: var(--accent-color);
 }
 .active-menu::after {
-  position:absolute;
+  position: absolute;
   content: "";
   display: block;
+
   background-color: var(--accent-color);
   width: 100%;
   height: 4px;
@@ -127,8 +129,7 @@ body {
   color: var(--primary-text-color);
 
   transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
 .contact-list:not(:last-child) {
   margin-right: 40px;
@@ -174,10 +175,8 @@ body {
   color: var(--secondary-text-color);
 
   transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
-
 .menu-link:hover,
 .menu-link:focus {
   color: var(--accent-color);
@@ -237,8 +236,7 @@ body {
   background: var(--button-iris);
 
   transition-property: background-color, box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
 
 .type-button:hover,
@@ -348,10 +346,10 @@ body {
   height: 40px;
   border-radius: 50%;
   background-color: var(--button-iris);
+  color: var(--cloud);
 
   transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
 .team-icon-link:is(:hover, :focus) {
   background-color: var(--accent-color);
@@ -396,8 +394,7 @@ body {
   border: 1px solid var(--customer-border);
 
   transition-property: border-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
 .customer-icon-link:hover,
 .customer-icon-link:focus {
@@ -406,8 +403,7 @@ body {
 .customer-link {
   fill: var(--customer-border);
   transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
 
 .customer-icon-link:hover .customer-link,
@@ -461,11 +457,11 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  color: var(--cloud);
   background-color: var(--button-iris);
 
   transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
 .foot-icon-link {
   fill: currentColor;
@@ -495,8 +491,7 @@ body {
   border-radius: 4px;
 
   transition-property: background-color, box-shadow, color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
 .nav-button:hover,
 .nav-button:focus {
@@ -510,8 +505,7 @@ body {
 }
 .portfolio-link {
   transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
 
 .portfolio-link:is(:hover, :focus) {
@@ -559,7 +553,7 @@ body {
   padding-left: 32px;
   overflow: auto;
   transform: translate(0, 100%);
-  transition: transform 500ms linear;
+  transition: transform 250ms linear;
 
   font-size: 16px;
   line-height: 1.5;
@@ -607,6 +601,7 @@ body {
   position: absolute;
   top: 24px;
   right: 24px;
+  padding: 0;
 
   display: flex;
   justify-content: center;
@@ -615,11 +610,11 @@ body {
   height: 24px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--cloud);
   background-color: #e7e9fc;
-  padding: 0;
+
   transition-property: border-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
 
 .modal-close-btn:is(:hover, :focus) {
@@ -627,10 +622,9 @@ body {
 }
 
 .modal-close-btn-icon {
-  fill: var(--accent-color);
+  fill: var(--secondary-text-color);
   transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--duration-timing-func);
 }
 
 .modal-close-btn:is(:hover, :focus) .modal-close-btn-icon {
