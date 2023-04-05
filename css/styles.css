@@ -16,7 +16,8 @@
   --customer-border: #8e8f99;
   --hover-green: #31d0aa;
   --border: #e7e9fc;
-  --duration-timing-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 250ms;
 }
 
 h1,
@@ -77,10 +78,6 @@ body {
   font-style: normal;
 }
 
-.menu-link.active-menu {
-  position: relative;
-  color: var(--accent-color);
-}
 .active-menu::after {
   position: absolute;
   content: "";
@@ -96,7 +93,9 @@ body {
 .page-header {
   padding-top: 24px;
   padding-bottom: 24px;
-  border-bottom: 1px solid #e7e9fc;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .page-header-container {
   display: flex;
@@ -128,15 +127,17 @@ body {
   color: var(--primary-text-color);
 
   transition-property: color;
-  transition: var(--duration-timing-func);
-}
-.contact-list:not(:last-child) {
-  margin-right: 40px;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 .contact-link:hover,
 .contact-link:focus {
   color: var(--accent-color);
 }
+.contact-list:not(:last-child) {
+  margin-right: 40px;
+}
+
 .secondary-title {
   font-weight: 700;
   font-size: 36px;
@@ -172,10 +173,21 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
-
   transition-property: color;
-  transition: var(--duration-timing-func);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
+.menu-link.active-menu {
+  position: relative;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+}
+
 .menu-link:hover,
 .menu-link:focus {
   color: var(--accent-color);
@@ -235,7 +247,8 @@ body {
   background: var(--button-iris);
 
   transition-property: background-color, box-shadow;
-  transition: var(--duration-timing-func);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .type-button:hover,
@@ -348,7 +361,8 @@ body {
   color: var(--cloud);
 
   transition-property: background-color;
-  transition: var(--duration-timing-func);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 .team-icon-link:is(:hover, :focus) {
   background-color: var(--accent-color);
@@ -393,7 +407,8 @@ body {
   border: 1px solid var(--customer-border);
 
   transition-property: border-color;
-  transition: var(--duration-timing-func);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 .customer-icon-link:hover,
 .customer-icon-link:focus {
@@ -402,7 +417,8 @@ body {
 .customer-link {
   fill: var(--customer-border);
   transition-property: fill;
-  transition: var(--duration-timing-func);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .customer-icon-link:hover .customer-link,
@@ -460,7 +476,8 @@ body {
   background-color: var(--button-iris);
 
   transition-property: background-color;
-  transition: var(--duration-timing-func);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 .foot-icon-link {
   fill: currentColor;
@@ -486,11 +503,12 @@ body {
   background: var(--background-color-cloud);
   border: none;
   padding: 12px 24px;
-  border: 1px solid #e7e9fc;
+  border: 1px solid var(--border);
   border-radius: 4px;
 
   transition-property: background-color, box-shadow, color;
-  transition: var(--duration-timing-func);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 .nav-button:hover,
 .nav-button:focus {
@@ -504,7 +522,8 @@ body {
 }
 .portfolio-link {
   transition-property: box-shadow;
-  transition: var(--duration-timing-func);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .portfolio-link:is(:hover, :focus) {
@@ -609,23 +628,25 @@ body {
   height: 24px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  color: var(--cloud);
-  background-color: #e7e9fc;
+  color: var(--border);
 
-  transition-property: border-color;
-  transition: var(--duration-timing-func);
+  transition-property: border-color, background-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .modal-close-btn:is(:hover, :focus) {
   border-color: var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 .modal-close-btn-icon {
   fill: var(--secondary-text-color);
   transition-property: fill;
-  transition: var(--duration-timing-func);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .modal-close-btn:is(:hover, :focus) .modal-close-btn-icon {
-  fill: var(--accent-color);
+  fill: var(--white);
 }
